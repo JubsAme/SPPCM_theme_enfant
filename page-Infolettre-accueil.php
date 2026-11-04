@@ -15,12 +15,12 @@ get_header();
         <h1><?php the_title(); ?></h1>
 
         <section class="contenu-convention">
-            <?php the_content(); ?>
+            <?php the_content();
+            
+            ?>
         </section>
 
     <?php endwhile; ?>
-	<?php get_template_part('template-parts/content-bouton'); ?>
-
 </main>
 
 <?php

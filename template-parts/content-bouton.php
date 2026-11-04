@@ -1,8 +1,1 @@
-<?php
-    $titreBouton = get_field('titre');
-    $LabelBouton = get_field('label');
-?>
-
-
-
-<h1><?php $titreBouton ?></h1>
+<h1>test. Is this thing on?</h1>
