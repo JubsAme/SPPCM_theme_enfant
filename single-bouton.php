@@ -9,6 +9,8 @@
 
 get_header();
 
-?>
+$post_type = get_post_type();
 
-<h1>test</h1>
+get_template_part('template-parts/content-bouton')
+
+?>
