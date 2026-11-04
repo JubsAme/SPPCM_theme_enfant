@@ -7,6 +7,8 @@ footer {
   background-color: white;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
 /**
  * main.scss — Point d'entrée principal de la compilation Sass.
  *
@@ -39,7 +41,7 @@ sont utilisées dans tout le site web. */
 --text-color-contrast: #ECE7E7; /* couleur de texte pâle*/
 --text-color: #2C3336; /* couleur de texte foncé*/
 --accent-color: #00C2EA; /* couleur d'accent*/
---accent-color-contrast: #003B5C; /* couleur d'accent foncé*/
+--accent-color-contrast: #1179b5; /* couleur d'accent foncé*/
 --brand-color: #DA453A; /* couleur de marque*/
 --brand-color-contrast: #A3170D; /* couleur de marque foncé*/
 }
@@ -48,12 +50,14 @@ sont utilisées dans tout le site web. */
 sont utilisées dans le footer du site web. */
 :root {
 --footer-background-color: #465156;
---footer-text-size-mobile: 1px;
---footer-text-size-tablet: 1px;
---footer-text-size-desktop: 1px;
+--footer-text-size-mobile: 15px;
+--footer-text-size-tablet: 20px;
+--footer-text-size-desktop: 24px;
+--footer-title-padding-mobile: 15px 15px 0 0;
 
 --footer-height-mobile: auto;
 --footer-width-mobile: auto;
+--footer-padding-mobile: 0px 20px 0px 20px;
 --footer-height-tablet: auto;
 --footer-width-tablet: auto;
 --footer-height-desktop: auto;
@@ -63,33 +67,43 @@ sont utilisées dans le footer du site web. */
 /* Variable des fonts et du texte - Les variables suivantes sont utilisées dans le texte sur tout le site web */
 :root {
 /* famille de typographie */
-    --font: "Jost", sans-serif;
+    /*--font: "Jost", sans-serif;*/
+
 /* variables de titres */
-    --title-size-desktop: 70pt;
-    --title-size-tablet: 64pt;
-    --title-size-mobile: 48pt;
+    --title-size-desktop: 70px;
+    --title-size-tablet: 64px;
+    /*--title-size-mobile: 48px;*/
+    --title-size-mobile: 45px;
     --title-weight: bold;
-    --title-padding: 15pt;
+    --title-padding: 15px;
+
 /* variables de sous-titres */
-    --subtitle-size-desktop:36pt;
-    --subtitle-size-tablet:32pt;
-    --subtitle-size-mobile:30pt;
+    /*--subtitle-size-desktop:36px;*/
+    --subtitle-size-desktop:30px;
+    --subtitle-size-tablet:32px;
+    --subtitle-size-mobile:30px;
     --subtitle-weight: bolder;
+
 /* variables de paragraphes */
-    --p-size-desktop:24pt;
-    --p-size-tablet:20pt;
-    --p-size-mobile:15pt;
+    /*--p-size-desktop:24px;*/
+    --p-size-desktop:15px;
+    --p-size-tablet:20px;
+    --p-size-mobile:15px;
+
 /* variables de liens */
-    --links-size-desktop:28pt;
-    --links-size-tablet:24pt;
-    --links-size-mobile:21pt;
+    /*--links-size-desktop:28px;*/
+    --links-size-desktop:21px;
+    --links-size-tablet:24px;
+    --links-size-mobile:21px;
     --links-weight: bold;
+    --links-color-visited: #c56ccb;
 }
+
 /* Variables des boutons - Les variables suivantes sont pour les boutons */
 :root {
-    --button-text-size-desktop:32pt;
-    --button-text-size-tablet:30pt;
-    --button-text-size-mobile:28pt;
+    --button-text-size-desktop:32px;
+    --button-text-size-tablet:30px;
+    --button-text-size-mobile:28px;
     --button-weight-desktop: bold;
     --button-weight-mobile: bolder;
     --button-allignment: center;
@@ -98,6 +112,8 @@ sont utilisées dans le footer du site web. */
 :root {
     --logo-height-mobile : 65px;
     --logo-width-mobile : 267px;
+    --logo-height-footer-mobile : 88px;
+    --logo-width-footer-mobile : 362px;
     --logo-height-tablet : 84px; /*à revoir*/
     --logo-width-tablet : 319px; /*à revoir*/
     --logo-height-desktop : 93px;
@@ -119,8 +135,8 @@ sont utilisées dans le footer du site web. */
     --box-width-desktop-3: 1054px;
     --box-width-desktop-4: 1282px;
 }
-/* Section header*/
 
+/* Section header*/
 :root {
     --header-backkground-color: #A3170D;
     --header-height-mobile: 77px;
@@ -131,64 +147,217 @@ sont utilisées dans le footer du site web. */
     --header-width-desktop: auto;
 }
 
+/* Section custom*/
+.text-rouge-titre { 
+    color: var(--brand-color); 
+}
+
+.text-contrast-titre { 
+    color: var(--text-color-contrast); 
+}
+
 /* ***************************************
             Styles généraux
-*************************************** */ 
+*************************************** */
+
 body {
     color: var(--text-color);
     background-color: var(--background-color);
-    font-family: var(--font);
 }
+
 text {
     font-weight: semibold;
 }
+
 h1 {
     font-size: var(--title-size-mobile);
     font-weight: var(--title-weight);
     padding: var(--title-padding);
 }
+
 h2 {
     font-size: var(--subtitle-size-mobile);
     font-weight: var(--subtitle-weight);
     /* padding: var(--subti); existe pas*/
 }
-    /* header {}*/
-    footer {
-        background-color: var(--footer-background-color);
-        color: var(--text-color-pale);
-        width: var(--footer-width-mobile);
-        height: var(--footer-height-mobile);
-        /* p: (var()); */
-    }
+
+p{
+    font-size: var(--p-size-mobile);
+}
+
+a {
+    font-size: var(--links-size-mobile);
+    font-weight: var(--links-weight);
+    color: var(--accent-color);
+}
+
+a:hover {
+    color: var(--accent-color-contrast);
+}
+
+a:visited {
+    color: var(--links-color-visited);
+}
+
+/* header {}*/
+
+footer {
+    color: var(--text-color-contrast);
+    width: var(--footer-width-mobile);
+    height: var(--footer-height-mobile);
+}
+
+.triangle_sombre {
+    width: 100%;
+    height: 37px;
+    background: conic-gradient(from -45deg, white 90deg, var(--accent-color) 0, var(--accent-color) 180deg, var(--footer-background-color) 0, var(--footer-background-color) 270deg,  var(--footer-background-color) 0);
+}
+
+/*.triangle_contrast {
+    width: 100%;
+    height: 0;
+    border-left: 31em solid transparent;
+    border-right: 0 solid transparent;
+    border-bottom: 37px solid red;
+}*/
+
+.contenu_footer {
+    background-color: var(--footer-background-color);
+    padding : var(--footer-padding-mobile);
+}
+
+footer h1 {
+    padding : var(--footer-title-padding-mobile);
+    margin : 0.67em 0 0 0;
+}
+
+footer p {
+    font-size : var(--footer-text-size-mobile);
+    height: var(--footer-height-mobile);
+    width: var(--footer-width-mobile);
+}
+
+#lien_footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 0.67em 0;
+}
+
+#lien_footer div:nth-child(2) {
+    margin: 0 0 1.2em 0;
+}
+
+.titre_lien_footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 0 0 0;
+}
+
+.img_lien_footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.titre_lien_footer p {
+    width : 181px;
+    text-align: center;
+    margin: 0 0 0 0;
+}
+
+.img_lien {
+    width : 181px;
+    height : 90px;
+}
+
+#lien_footer img {
+    width : 100%;
+    height : 100%;
+    object-fit: cover;
+}
+
+#boutons_footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.logo_sppcm {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.logo_sppcm img {
+    width: var(--logo-width-footer-mobile);
+    height: var(--logo-height-footer-mobile);
+}
+
 @media (min-device-width: 768px) {
     /* header {}*/
+
     footer {
         background-color: var(--footer-background-color);
-        color: var(--text-color-pale);
+        color: var(--text-color-contrast);
         width: var(--footer-width-tablet);
         height: var(--footer-height-tablet);
         /* p: (var()); */
     }
+
+    /*footer p {
+        font-size : var(--footer-text-size-tablet);
+        height: var(--footer-height-tablet);
+        width: var(--footer-width-tablet);
+    }*/
+
     h1 {
         font-size: var(--title-size-tablet);
     }
+
     h2 {
         font-size: var(--subtitle-size-tablet);
+    }
+
+    p{
+        font-size: var(--p-size-tablet);
+    }
+
+    a {
+        font-size: var(--links-size-tablet);
     }
 }
 @media (min-device-width: 1024px) {
     /* header{}*/
-    .footer {
+
+    footer {
         background-color: var(--footer-background-color);
-        color: var(--text-color-pale);
+        color: var(--text-color-contrast);
         width: var(--footer-width-desktop);
         height: var(--footer-height-desktop);
         /* p: (var()); */
     }
+
+    /*footer p {
+        font-size : var(--footer-text-size-desktop);
+        height: var(--footer-height-desktop);
+        width: var(--footer-width-desktop);
+    }*/
+
     h1 {
         font-size: var(--title-size-desktop);
     }
+
     h2 {
         font-size: var(--subtitle-size-desktop);
+    }
+
+    p{
+        font-size: var(--p-size-desktop);
+    }
+
+    a {
+        font-size: var(--links-size-desktop);
     }
 }
