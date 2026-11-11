@@ -1,0 +1,215 @@
+/* ========================================
+   PAGE CONVENTION COLLECTIVE
+======================================== */
+
+.convention-collective {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 5%;
+    box-sizing: border-box;
+}
+
+/* ========================================
+   TITRE
+======================================== */
+
+.convention-collective h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #33282d;
+    margin: 0 0 25px 0;
+}
+
+/* ========================================
+   LISTE DES DOCUMENTS
+======================================== */
+
+.liste-documents {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    max-width: 450px;
+}
+
+/* ========================================
+   SOUS-TITRE
+======================================== */
+
+.convention-sous-titre {
+    font-size: 22px;
+    font-weight: 700;
+    color: #33282d;
+
+    margin: 25px 0 15px 0;
+    padding: 0;
+
+    text-align: left;
+}
+
+/* ========================================
+   DOCUMENT
+======================================== */
+
+.document {
+    width: 100%;
+}
+
+/* Lien complet contenant PDF et titre */
+
+.document-complet {
+    display: flex;
+    align-items: stretch;
+    gap: 5px;
+    width: 100%;
+    text-decoration: none;
+}
+
+/* ========================================
+   BOUTON PDF
+======================================== */
+
+.document-pdf {
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    padding: 10px;
+    border-radius: 20px 0px 20px 0px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-shrink: 0;
+}
+
+/* ========================================
+   BOUTON TITRE DOCUMENT
+======================================== */
+
+.document-lien {
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    padding: 10px 15px;
+    border-radius: 20px 0px 20px 0px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    flex: 1;
+    min-width: 0;
+}
+
+/* ========================================
+   ALTERNANCE DES COULEURS
+======================================== */
+
+/* Documents impairs : 1, 3, 5... */
+
+.document:nth-of-type(odd) .document-pdf,
+.document:nth-of-type(odd) .document-lien {
+    background-color: var(--brand-color-contrast);
+}
+
+/* Documents pairs : 2, 4, 6... */
+
+.document:nth-of-type(even) .document-pdf,
+.document:nth-of-type(even) .document-lien {
+    background-color: var(--brand-color);
+}
+
+/* ========================================
+   ACCESSIBILITÉ CLAVIER
+======================================== */
+
+.document-complet:focus-visible {
+    outline: 3px solid #33282d;
+    outline-offset: 3px;
+    border-radius: 20px 0px 20px 0px;
+}
+
+/* ========================================
+   TABLETTE
+======================================== */
+
+@media screen and (max-width: 1024px) {
+
+    .convention-collective {
+        padding: 35px 5%;
+    }
+
+    .convention-collective h1 {
+        font-size: 28px;
+    }
+
+    .liste-documents {
+        max-width: 400px;
+    }
+
+    /* Sous-titre tablette */
+
+    .convention-sous-titre {
+        font-size: 20px;
+        margin: 22px 0 12px 0;
+    }
+
+    .document-lien {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .document-pdf {
+        font-size: 13px;
+    }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media screen and (max-width: 600px) {
+
+    .convention-collective {
+        padding: 25px 5%;
+    }
+
+    .convention-collective h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .liste-documents {
+        max-width: 100%;
+        gap: 6px;
+    }
+
+    /* Sous-titre mobile */
+
+    .convention-sous-titre {
+        font-size: 18px;
+        margin: 20px 0 10px 0;
+    }
+
+    .document-complet {
+        gap: 4px;
+    }
+
+    .document-pdf {
+        font-size: 11px;
+        padding: 8px 6px;
+    }
+
+    .document-lien {
+        font-size: 12px;
+        padding: 8px;
+        border-radius: 20px 0px 20px 0px;
+    }
+}
