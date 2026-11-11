@@ -34,7 +34,7 @@ get_header();
 	<div id="fond-contrast" class="container2">
 		<h1 class="main-title">Actualité</h1>
 		<p class="main-actualitelinks common-links"><span>Toutes les</span><span class="blue-links"> actualités-></span></p>
-		<div class="main-bigActualiteImage">
+		<div class="main-bigActualiteImage text-dark">
 
 			<?php
 			$i = 0;

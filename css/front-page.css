@@ -1,12 +1,20 @@
 @charset "UTF-8";
 header {
   background-color: white;
+  padding: 0%;
+  margin: 0%;
 }
-
 footer {
   background-color: white;
 }
 * {
+    padding: 0;
+    margin: 0;
+}
+.skip-link {
+    display: none;
+}
+.site-title {
     padding: 0;
     margin: 0;
 }
@@ -136,8 +144,8 @@ sont utilisées dans le footer du site web. */
 
 /* Section custom*/
     .text-rouge-titre { color: var(--brand-color); }
-    .text-contrast-titre { color: var(--text-color-contrast); 
-    }
+    .text-contrast-titre { color: var(--text-color-contrast); }
+    .text-dark { color: #2C3336;}
 
 /* ***************************************
             Styles généraux
@@ -195,10 +203,11 @@ body {
     "p2 p2 p2 p2 p2 p2 p2 p2 p2 p2 p2 p2"
     "p3 p3 p3 . . . . . . . . ."
     ;
-    height: 1105px;
-    background-image: url('../images/dom.jpg');
+    height: 1255px;
+    background-image: url('../images/dom.png');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: auto;
+    background-position: bottom;
 }
 .main-link1 {
     grid-area: mainLink1;
@@ -242,11 +251,13 @@ body {
 .main-tinyInfolettreImage {
     background-color: black;
     grid-area: tinyInfolettreImage;
+    border-radius: 20px 0px 20px 0px;
 }
 .main-bigActualiteImage {
     background-color: black;
     grid-area: bigActualiteImage;
     height: fit-content;
+    border-radius: 20px 0px 20px 0px;
 }
 .main-actualitelinks {
     grid-area: actualitelinks;
