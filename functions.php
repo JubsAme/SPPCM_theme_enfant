@@ -40,6 +40,18 @@ if (is_page('convention-collective')) {
     );
 
 }
+ // CSS de la page front-page
+    if (('front-page')) {
+
+        wp_enqueue_style(
+            'underscores-child-convention',
+            get_stylesheet_directory_uri() . '/css/front-page.css',
+            array('underscores-child-main'),
+            filemtime(
+                get_stylesheet_directory() . '/css/front-page.css'
+            )
+        );
+    }
 }
 add_action('wp_enqueue_scripts', 'underscores_child_assets');
 
@@ -59,18 +71,6 @@ function underscores_child_scripts()
         array(),                // Dépendances de modules (autres modules requis avant celui-ci, si besoin).
         '1.0.0'
     );
-    // CSS de la page Convention collective
-    if (('front-page')) {
-
-        wp_enqueue_style(
-            'underscores-child-convention',
-            get_stylesheet_directory_uri() . '/css/front-page.css',
-            array('underscores-child-main'),
-            filemtime(
-                get_stylesheet_directory() . '/css/front-page.css'
-            )
-        );
-    }
 }
 add_action('wp_enqueue_scripts', 'underscores_child_scripts');
 
