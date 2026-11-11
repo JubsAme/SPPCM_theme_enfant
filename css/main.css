@@ -6,9 +6,11 @@ header {
 footer {
   background-color: white;
 }
-
+* {
+    padding: 0;
+    margin: 0;
+}
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
-
 /**
  * main.scss — Point d'entrée principal de la compilation Sass.
  *
@@ -71,32 +73,24 @@ sont utilisées dans le footer du site web. */
 /* Variable des fonts et du texte - Les variables suivantes sont utilisées dans le texte sur tout le site web */
 :root {
 /* famille de typographie */
-    /*--font: "Jost", sans-serif;*/
-
+    /* --font: "Jost", sans-serif; */
 /* variables de titres */
     --title-size-desktop: 70px;
     --title-size-tablet: 64px;
-    /*--title-size-mobile: 48px;*/
-    --title-size-mobile: 45px;
+    --title-size-mobile: 48px;
     --title-weight: bold;
-    --title-padding: 15px;
-
 /* variables de sous-titres */
-    /*--subtitle-size-desktop:36px;*/
-    --subtitle-size-desktop:30px;
+    --subtitle-size-desktop:36px;
     --subtitle-size-tablet:32px;
     --subtitle-size-mobile:30px;
     --subtitle-weight: bolder;
 
 /* variables de paragraphes */
-    /*--p-size-desktop:24px;*/
-    --p-size-desktop:15px;
+    --p-size-desktop:24px;
     --p-size-tablet:20px;
     --p-size-mobile:15px;
-
 /* variables de liens */
-    /*--links-size-desktop:28px;*/
-    --links-size-desktop:21px;
+    --links-size-desktop:28px;
     --links-size-tablet:24px;
     --links-size-mobile:21px;
     --links-weight: bold;
@@ -105,14 +99,14 @@ sont utilisées dans le footer du site web. */
 
 /* Variables des boutons - Les variables suivantes sont pour les boutons */
 :root {
-    --button-text-size-desktop:32px;
-    --button-text-size-tablet:30px;
-    --button-text-size-mobile:28px;
-    --button-weight-desktop: bold;
-    --button-weight-mobile: bolder;
-    --button-allignment: center;
+    --button-text-size-desktop : 37.5px;
+    --button-text-size-tablet : 30px;
+    --button-text-size-mobile : 28px;
+    --button-weight-desktop : bold;
+    --button-weight-mobile : bolder;
+    --button-allignment : center;
 }
-/* Variables logo - Les variables suivantes sont utilisées pour le logo du site web */
+/* Variables du logo - Les variables suivantes sont utilisées pour le logo du site web */
 :root {
     --logo-height-mobile : 65px;
     --logo-width-mobile : 267px;
@@ -128,7 +122,7 @@ sont utilisées dans le footer du site web. */
     --logo-width-footer-desktop : 398px;
 }
 
-/* Variables boites - Les variables suivantes sont utilisées pour les boites du site web */
+/* Variables des boites - Les variables suivantes sont utilisées pour les boites du site web */
 :root {
     --box-height-mobile : auto;
     --box-width-mobile : 362px;
@@ -156,13 +150,9 @@ sont utilisées dans le footer du site web. */
 }
 
 /* Section custom*/
-.text-rouge-titre { 
-    color: var(--brand-color); 
-}
-
-.text-contrast-titre { 
-    color: var(--text-color-contrast); 
-}
+    .text-rouge-titre { color: var(--brand-color); }
+    .text-contrast-titre { color: var(--text-color-contrast); 
+    }
 
 /* ***************************************
             Styles généraux
@@ -180,7 +170,6 @@ text {
 h1 {
     font-size: var(--title-size-mobile);
     font-weight: var(--title-weight);
-    padding: var(--title-padding);
 }
 
 h2 {
@@ -381,7 +370,6 @@ footer p {
         color: var(--text-color-contrast);
         width: var(--footer-width-tablet);
         height: var(--footer-height-tablet);
-        /* p: (var()); */
     }
 
     .triangle_sombre {
@@ -578,11 +566,9 @@ footer p {
     h2 {
         font-size: var(--subtitle-size-tablet);
     }
-
     p{
         font-size: var(--p-size-tablet);
     }
-
     a {
         font-size: var(--links-size-tablet);
     }
@@ -608,7 +594,6 @@ footer p {
         color: var(--text-color-contrast);
         width: var(--footer-width-desktop);
         height: var(--footer-height-desktop);
-        /* p: (var()); */
     }
 
     .triangle_sombre {
@@ -809,11 +794,9 @@ footer p {
     h2 {
         font-size: var(--subtitle-size-desktop);
     }
-
     p{
         font-size: var(--p-size-desktop);
     }
-
     a {
         font-size: var(--links-size-desktop);
     }
