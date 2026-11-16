@@ -10,11 +10,20 @@ footer {
 * {
     padding: 0;
     margin: 0;
+    border: 0;
+}
+html {
+    padding: 0;
+    margin: 0;
 }
 .skip-link {
     display: none;
 }
 .site-title {
+    padding: 0;
+    margin: 0;
+}
+.site-main {
     padding: 0;
     margin: 0;
 }
@@ -203,10 +212,10 @@ body {
     "p2 p2 p2 p2 p2 p2 p2 p2 p2 p2 p2 p2"
     "p3 p3 p3 . . . . . . . . ."
     ;
-    height: 1255px;
+    height: 1455px;
     background-image: url('../images/dom.png');
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: contain;
     background-position: bottom;
 }
 .main-link1 {
