@@ -42,6 +42,19 @@ if (('footer')) {
 }
 }
  // CSS de la page front-page
+    // CSS de la page Convention collective
+    if (is_page('convention-collective')) {
+
+        wp_enqueue_style(
+            'underscores-child-convention',
+            get_stylesheet_directory_uri() . '/css/convention-collective.css',
+            array('underscores-child-main'),
+            filemtime(
+                get_stylesheet_directory() . '/css/convention-collective.css'
+            )
+        );
+    }
+    // CSS de la page front-page
     if (('front-page')) {
 
         wp_enqueue_style(
@@ -53,7 +66,6 @@ if (('footer')) {
             )
         );
     }
-}
 add_action('wp_enqueue_scripts', 'underscores_child_assets');
 
 
