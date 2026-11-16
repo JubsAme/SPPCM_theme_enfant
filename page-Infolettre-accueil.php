@@ -1,4 +1,3 @@
-
 <?php
 get_header();
 ?>
@@ -10,7 +9,8 @@ get_header();
     // Arguments passés à la requète
     $args = array(
         'posts_per_page' => -1,
-        'post_type' => 'bouton',
+        'post_type' => 'page',
+        'post_parent' => get_the_ID(),
     );
 
     // requète => retourne un objet contenant un tableau d'objet $post
@@ -18,17 +18,17 @@ get_header();
     if ($the_query->have_posts()): ?>
         <div class="wrapper">
             <ul>
-            <?php while ( $the_query-have_posts() ) : $the_query->the_post(); ?>
-                <li>
-                    <a href=" <?php the_permalink(); ?> ">
-                        <?php the_title(); ?>
-                    </a>
-                </li>
-            <?php endwhile; ?>    
+                <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+                    <li>
+                        <a href=" <?php the_permalink(); ?> ">
+                            <?php the_title(); ?>
+                        </a>
+                    </li>
+                <?php endwhile; ?>
             </ul>
         </div>
-    <?php endif; 
-    
+    <?php endif;
+
     wp_reset_query();
 
     ?>

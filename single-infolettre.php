@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying  all single posts
  * 
@@ -11,6 +12,6 @@ get_header();
 
 $post_type = get_post_type();
 
-get_template_part('template-parts/content-bouton')
+get_template_part('template-parts/content-infolettres')
 
 ?>
