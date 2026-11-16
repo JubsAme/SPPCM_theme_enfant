@@ -27,18 +27,19 @@ function underscores_child_assets()
         // Version dynamique recommandée en production :
         // , filemtime( get_stylesheet_directory() . '/css/main.css' )
     );
-    // CSS de la page Convention collective
-if (is_page('convention-collective')) {
+    // CSS du footer
+if (('footer')) {
 
     wp_enqueue_style(
         'underscores-child-convention',
-        get_stylesheet_directory_uri() . '/css/convention-collective.css',
+        get_stylesheet_directory_uri() . '/css/footer.css',
         array('underscores-child-main'),
         filemtime(
-            get_stylesheet_directory() . '/css/convention-collective.css'
+            get_stylesheet_directory() . '/css/footer.css'
         )
     );
 
+}
 }
  // CSS de la page front-page
     if (('front-page')) {
