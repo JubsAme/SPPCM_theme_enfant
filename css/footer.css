@@ -717,12 +717,12 @@ footer p {
 
     .footer_contact {
         grid-row: 4/4;
-        grid-column: 1/8;
+        grid-column: 1/10;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
-        margin: 0 0 20px 0;
+        margin: 0 0 20px 0; 
     }
 
     .footer_contact p {
