@@ -40,7 +40,7 @@ if (('footer')) {
     );
 
 }
-}
+
  // CSS de la page front-page
     if (('front-page')) {
 
