@@ -273,38 +273,11 @@ h2 {
     font-weight: var(--subtitle-weight);
     /* padding: var(--subti); existe pas*/
 }
-p{
-    font-size: var(--p-size-mobile);
-}
 a {
     font-size: var(--links-size-mobile);
     font-weight: var(--links-weight);
 }
-@media (min-device-width: 768px) {
-    h1 {
-        font-size: var(--title-size-tablet);
-    }
-    h2 {
-        font-size: var(--subtitle-size-tablet);
-    }
-    p{
-        font-size: var(--p-size-tablet);
-    }
-    a {
-        font-size: var(--links-size-tablet);
-    }
+@media (min-width: 768px) {
 }
 @media (min-device-width: 1024px) {
-    h1 {
-        font-size: var(--title-size-desktop);
-    }
-    h2 {
-        font-size: var(--subtitle-size-desktop);
-    }
-    p{
-        font-size: var(--p-size-desktop);
-    }
-    a {
-        font-size: var(--links-size-desktop);
-    }
 }
