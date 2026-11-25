@@ -21,12 +21,20 @@ get_header();
                 <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
                     <li>
                         <a href=" <?php the_permalink(); ?> ">
-                            <?php the_title(); ?>
+                            <?php echo get_field('titre'); ?>
+                        </a>
+                        <a href=" <?php the_permalink(); ?> ">
+                            <?php echo get_field('label'); ?>
                         </a>
                     </li>
                 <?php endwhile; ?>
             </ul>
         </div>
+        <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+            <div>
+                <?php echo the_content(); ?>
+            </div>
+        <?php endwhile; ?>
     <?php endif;
 
     wp_reset_query();
