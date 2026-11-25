@@ -28,18 +28,27 @@ function underscores_child_assets()
         // , filemtime( get_stylesheet_directory() . '/css/main.css' )
     );
     // CSS du footer
-if (('footer')) {
-
-    wp_enqueue_style(
-        'underscores-child-convention',
-        get_stylesheet_directory_uri() . '/css/footer.css',
-        array('underscores-child-main'),
-        filemtime(
-            get_stylesheet_directory() . '/css/footer.css'
-        )
-    );
-
-}
+    if (('footer')) {
+        wp_enqueue_style(
+            'underscores-child-convention',
+            get_stylesheet_directory_uri() . '/css/footer.css',
+            array('underscores-child-main'),
+            filemtime(
+                get_stylesheet_directory() . '/css/footer.css'
+            )
+        );
+    }
+    //CSS du credit
+    if (('credits')) {
+        wp_enqueue_style(
+            'underscores-child-credits',
+            get_stylesheet_directory_uri() . '/css/credits.css',
+            array('underscores-child-main'),
+            filemtime(
+                get_stylesheet_directory() . '/css/credits.css'
+            )
+        );
+    }
 
  // CSS de la page front-page
     if (('front-page')) {

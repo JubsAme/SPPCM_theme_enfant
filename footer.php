@@ -71,10 +71,12 @@ get_footer();
             </a>
         </div>
         <div class="logo_sppcm">
-            <img src="<?php echo get_theme_file_uri("images/cropped-sppcm_logo_rgb.png") ?>" alt="logo_sppcm"/>
+            <a href="/refonte_SPPCM/">
+                <img src="<?php echo get_theme_file_uri("images/cropped-sppcm_logo_rgb.png") ?>" alt="logo_sppcm"/>
+            </a>
         </div>
         <p class="footer_credits footer_p">
-            Maquette réalisée par <a href="">Wordmess</a>
+            Maquette réalisée par <a href="credits">Wordmess</a>
         </p>
     </div>
 </footer>
