@@ -33,7 +33,7 @@ get_header();
                 </ul>
             </div>
             <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-                <div>
+                <div class="contenu">
                     <?php echo the_content(); ?>
                 </div>
             <?php endwhile; ?>
