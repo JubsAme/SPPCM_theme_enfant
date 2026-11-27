@@ -1,12 +1,5 @@
 @charset "UTF-8";
-header {
-  background-color: white;
-  padding: 0%;
-  margin: 0%;
-}
-footer {
-  background-color: white;
-}
+
 * {
     padding: 0;
     margin: 0;
@@ -55,15 +48,6 @@ html {
 /*# sourceMappingURL=main.css.map */
 /* Couleurs globales - Les variables de couleurs suivantes
 sont utilisées dans tout le site web. */
-:root {
---background-color: #D9D9D9; /* couleur du fond du site*/
---text-color-contrast: #ECE7E7; /* couleur de texte pâle*/
---text-color: #2C3336; /* couleur de texte foncé*/
---accent-color: #00C2EA; /* couleur d'accent*/
---accent-color-contrast: #003B5C; /* couleur d'accent foncé*/
---brand-color: #DA453A; /* couleur de marque*/
---brand-color-contrast: #A3170D; /* couleur de marque foncé*/
-}
 
 /* Section custom*/
     .text-rouge-titre { color: var(--brand-color); }
@@ -73,10 +57,6 @@ sont utilisées dans tout le site web. */
 /* ***************************************
             Styles généraux
 *************************************** */ 
-body {
-    color: var(--text-color);
-    background-color: var(--background-color);
-}
 
 .blue-links {
     color: var(--accent-color);
@@ -114,23 +94,15 @@ body {
     grid-area: p3;
 }
 .container {
-    padding-top: 50px;
-    margin-left: 20px;
-    margin-right: 20px;
     display: grid;
-    columns: 12;
-    gap: 20px 20px;
+    grid-template-columns: repeat(4, 1fr);
     grid-template-areas: 
-    "mainTitle mainTitle mainTitle mainTitle . . . . . . ."
-    "p1 p1 p1 p1 p1 p1 p1 p1 p1 p1 p1 p1"
-    "p2 p2 p2 p2 p2 p2 p2 p2 p2 p2 p2 p2"
-    "p3 p3 p3 . . . . . . . . ."
+    ". mainTitle mainTitle mainTitle"
+    "p1 p1 p1 p1"
+    "p2 p2 p2 p2"
+    "p3 p3 p3 ."
     ;
-    height: 1455px;
-    background-image: url('../images/dom.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: bottom;
+    gap: 20px;
 }
 .main-link1 {
     grid-area: mainLink1;
@@ -189,20 +161,21 @@ body {
 .container2 {
     padding-top: 50px;
     display: grid;
-    columns: 12;
     justify-content: space-between;
     gap: 20px 20px;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
+    padding-left: 20px;
+    padding-right: 20px;
+    columns: 4;
     grid-template-areas: 
-    ". mainTitle mainTitle mainTitle . . . . . . . ."
-    ". bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage ."
-    ". actualitelinks actualitelinks actualitelinks . . . . . . . ."
-    ". mainLink1 mainLink1 mainLink1 . . . . . . . ."
-    ". mainLisez mainLisez mainLisez mainLisez . . . tinyInfolettreImage tinyInfolettreImage tinyInfolettreImage ."
-    ". mainInfolettre mainInfolettre mainInfolettre . . . . tinyInfolettreImage tinyInfolettreImage tinyInfolettreImage ."
-    ". mainInfo mainInfo mainInfo mainInfo mainLettre mainLettre mainLettre tinyInfolettreImage tinyInfolettreImage tinyInfolettreImage ."
-    ". mainLink2 mainLink2 mainLink2 . . . . . . . ."
-    ". mainInfolettreLinks mainInfolettreLinks mainInfolettreLinks . . . . . . . ."
+    "mainTitle mainTitle mainTitle mainTitle"
+    "bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage"
+    "actualitelinks actualitelinks actualitelinks ."
+    "mainLink1 mainLink1 mainLink1 ."
+    "mainLisez mainLisez mainLisez ."
+    "mainInfolettre mainInfolettre mainInfolettre ."
+    "mainInfo mainInfo mainInfo mainLettre"
+    "mainLink2 mainLink2 mainLink2 mainLink2"
+    "mainInfolettreLinks mainInfolettreLinks mainInfolettreLinks mainInfolettreLinks"
     ;
 }
 .imgC3 {
@@ -234,10 +207,10 @@ body {
     display: grid;
     margin-left: 20px;
     margin-right: 20px;
-    columns: 12;
+    columns: 4;
     justify-content: space-between;
     gap: 20px 20px;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     grid-template-areas: 
     ". mainTitle mainTitle mainTitle mainTitle . . . . . . ."
     ". p1 p1 p1 p1 p1 . . . . . ."
@@ -278,6 +251,144 @@ a {
     font-weight: var(--links-weight);
 }
 @media (min-width: 768px) {
+    .container {
+        padding-top: 50px;
+        margin-left: 20px;
+        margin-right: 20px;
+        display: grid;
+        columns: 12;
+        gap: 20px 20px;
+        grid-template-areas: 
+        "mainTitle mainTitle mainTitle mainTitle . . . . . . ."
+        "p1 p1 p1 p1 p1 p1 p1 p1 p1 p1 p1 p1"
+        "p2 p2 p2 p2 p2 p2 p2 p2 p2 p2 p2 p2"
+        "p3 p3 p3 . . . . . . . . ."
+        ;
+        height: 1455px;
+        background-image: url('../images/dom.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: bottom;
+    }
+    .container2 {
+        padding-top: 50px;
+        display: grid;
+        columns: 12;
+        justify-content: space-between;
+        gap: 20px 20px;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        grid-template-areas: 
+        ". mainTitle mainTitle mainTitle . . . . . . . ."
+        ". bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage ."
+        ". actualitelinks actualitelinks actualitelinks . . . . . . . ."
+        ". mainLink1 mainLink1 mainLink1 . . . . . . . ."
+        ". mainLisez mainLisez mainLisez mainLisez . . . tinyInfolettreImage tinyInfolettreImage tinyInfolettreImage ."
+        ". mainInfolettre mainInfolettre mainInfolettre . . . . tinyInfolettreImage tinyInfolettreImage tinyInfolettreImage ."
+        ". mainInfo mainInfo mainInfo mainInfo mainLettre mainLettre mainLettre tinyInfolettreImage tinyInfolettreImage tinyInfolettreImage ."
+        ". mainLink2 mainLink2 mainLink2 . . . . . . . ."
+        ". mainInfolettreLinks mainInfolettreLinks mainInfolettreLinks . . . . . . . ."
+        ;
+    }
+    .container3 {
+        padding-top: 50px;
+        display: grid;
+        margin-left: 20px;
+        margin-right: 20px;
+        columns: 12;
+        justify-content: space-between;
+        gap: 20px 20px;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        grid-template-areas: 
+        ". mainTitle mainTitle mainTitle mainTitle mainTitle . . . . . ."
+        ". imgC3 imgC3 imgC3 imgC3 imgC3 imgC3 imgC3 imgC3 imgC3 imgC3 ."
+        ". p1 p1 p1 p1 p1 . . p3 p3 p3 ."
+        ;
+    }
+    .container4 {
+        padding-top: 50px;
+        display: grid;
+        margin-left: 20px;
+        margin-right: 20px;
+        columns: 12;
+        justify-content: space-between;
+        gap: 20px 20px;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        grid-template-areas: 
+        ". mainTitle mainTitle mainTitle mainTitle . . . . . . ."
+        ". p1 p1 p1 p1 p1 . . . . . ."
+        ". p2 p2 p2 p2 . . . . . . ."
+    
+        ;
+    }
 }
 @media (min-device-width: 1024px) {
+    .container {
+        padding-top: 50px;
+        margin-left: 20px;
+        margin-right: 20px;
+        display: grid;
+        columns: 12;
+        gap: 20px 20px;
+        grid-template-areas: 
+        "mainTitle mainTitle mainTitle mainTitle . . . . . . ."
+        "p1 p1 p1 p1 p1 p1 p1 p1 p1 p1 p1 p1"
+        "p2 p2 p2 p2 p2 p2 p2 p2 p2 p2 p2 p2"
+        "p3 p3 p3 . . . . . . . . ."
+        ;
+        height: 1455px;
+        background-image: url('../images/dom.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: bottom;
+    }
+    .container2 {
+        padding-top: 50px;
+        display: grid;
+        columns: 12;
+        justify-content: space-between;
+        gap: 20px 20px;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        grid-template-areas: 
+        ". mainTitle mainTitle mainTitle . . . . . . . ."
+        ". bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage ."
+        ". actualitelinks actualitelinks actualitelinks . . . . . . . ."
+        ". mainLink1 mainLink1 mainLink1 . . . . . . . ."
+        ". mainLisez mainLisez mainLisez mainLisez . . . tinyInfolettreImage tinyInfolettreImage tinyInfolettreImage ."
+        ". mainInfolettre mainInfolettre mainInfolettre . . . . tinyInfolettreImage tinyInfolettreImage tinyInfolettreImage ."
+        ". mainInfo mainInfo mainInfo mainInfo mainLettre mainLettre mainLettre tinyInfolettreImage tinyInfolettreImage tinyInfolettreImage ."
+        ". mainLink2 mainLink2 mainLink2 . . . . . . . ."
+        ". mainInfolettreLinks mainInfolettreLinks mainInfolettreLinks . . . . . . . ."
+        ;
+    }
+    .container3 {
+        padding-top: 50px;
+        display: grid;
+        margin-left: 20px;
+        margin-right: 20px;
+        columns: 12;
+        justify-content: space-between;
+        gap: 20px 20px;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        grid-template-areas: 
+        ". mainTitle mainTitle mainTitle mainTitle mainTitle . . . . . ."
+        ". imgC3 imgC3 imgC3 imgC3 imgC3 imgC3 imgC3 imgC3 imgC3 imgC3 ."
+        ". p1 p1 p1 p1 p1 . . p3 p3 p3 ."
+        ;
+    }
+    .container4 {
+        padding-top: 50px;
+        display: grid;
+        margin-left: 20px;
+        margin-right: 20px;
+        columns: 12;
+        justify-content: space-between;
+        gap: 20px 20px;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        grid-template-areas: 
+        ". mainTitle mainTitle mainTitle mainTitle . . . . . . ."
+        ". p1 p1 p1 p1 p1 . . . . . ."
+        ". p2 p2 p2 p2 . . . . . . ."
+    
+        ;
+    }
 }

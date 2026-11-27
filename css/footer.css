@@ -22,7 +22,7 @@ footer {
 }
 
 .triangle_contrast {
-    background-color: white;
+    background-color: var(--background-color);
     width: 100%;
     height: 0;
     border-style: solid;
@@ -215,7 +215,7 @@ footer h1 {
     }
 
     .triangle_contrast {
-        background-color: white;
+        background-color: var(--background-color);
         width: 100%;
         height: 0;
         border-style: solid;
@@ -434,7 +434,7 @@ footer h1 {
     }
 
     .triangle_contrast {
-        background-color: white;
+        background-color: var(--background-color);
         width: 100%;
         height: 0;
         border-style: solid;
@@ -658,7 +658,7 @@ footer h1 {
     }
 
     .triangle_contrast {
-        background-color: white;
+        background-color: var(--background-color);
         width: 100%;
         height: 0;
         border-style: solid;
