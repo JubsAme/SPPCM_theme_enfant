@@ -1,8 +1,3 @@
-<?php
-get_sidebar();
-get_footer();
-?>
-
 <footer>
     <div class="triangle_contrast"></div>
     <div class="triangle_sombre"></div>
@@ -78,3 +73,10 @@ get_footer();
         </p>
     </div>
 </footer>
+
+</div><!-- #page -->
+
+<?php wp_footer(); ?>
+
+</body>
+</html>
