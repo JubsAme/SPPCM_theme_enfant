@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 header {
   background-color: white;
   padding: 0%;
@@ -18,7 +19,6 @@ footer {
     padding: 0;
     margin: 0;
 }
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 /**
  * main.scss — Point d'entrée principal de la compilation Sass.
  *
@@ -254,10 +254,68 @@ body {
     border-radius: 20px 0px 20px 0px;
 }
 .main-bigActualiteImage {
-    background-color: black;
+    background-color: var(--background-color);
     grid-area: bigActualiteImage;
     height: fit-content;
     border-radius: 20px 0px 20px 0px;
+    overflow: hidden;
+    width: 100%;
+    min-width: 0;
+}
+.carousel-actualites {
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.carousel-piste {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+/*NAVIGATION DU CARROUSEL*/
+
+.carousel-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 0;
+}
+
+/*PASTILLES*/
+
+.carousel-pastille {
+    width: 14px;
+    height: 14px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: #999999;
+    cursor: pointer;
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+/*PASTILLE ACTIVE*/
+
+.carousel-pastille.active {
+    background-color: var(--brand-color);
+    transform: scale(1.2);
+}
+
+/*SURVOL*/
+
+.carousel-pastille:hover {
+    background-color: var(--brand-color-contrast);
 }
 .main-actualitelinks {
     grid-area: actualitelinks;
@@ -387,6 +445,17 @@ a {
 }
 @media (min-device-width: 1024px) {
     /* header{}*/
+        .carousel-image {
+        height: 500px;
+    }
+
+    .carousel-contenu h2 {
+        font-size: var(--subtitle-size-desktop);
+    }
+
+    .carousel-contenu p {
+        font-size: var(--p-size-desktop);
+    }
     .footer {
         background-color: var(--footer-background-color);
         color: var(--text-color-pale);

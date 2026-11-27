@@ -53,7 +53,6 @@ if (('footer')) {
             )
         );
     }
-}
 add_action('wp_enqueue_scripts', 'underscores_child_assets');
 
 
@@ -69,6 +68,12 @@ function underscores_child_scripts()
     wp_enqueue_script_module(
         'underscores-child-main',
         get_stylesheet_directory_uri() . '/js/main.js',
+        array(),                // Dépendances de modules (autres modules requis avant celui-ci, si besoin).
+        '1.0.0'
+    );
+        wp_enqueue_script(
+        'underscores-child-carousel',
+        get_stylesheet_directory_uri() . '/js/carousel.js',
         array(),                // Dépendances de modules (autres modules requis avant celui-ci, si besoin).
         '1.0.0'
     );

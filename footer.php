@@ -2,7 +2,8 @@
 get_sidebar();
 get_footer();
 ?>
-
+</body>
+</html>
 <footer>
     <div class="triangle_contrast"></div>
     <div class="triangle_sombre"></div>

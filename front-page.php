@@ -36,19 +36,85 @@ get_header();
 		<p class="main-actualitelinks common-links"><span>Toutes les</span><span class="blue-links"> actualités-></span></p>
 		<div class="main-bigActualiteImage text-dark">
 
-			<?php
-			$i = 0;
-			while (have_posts() && $i < 3) :
-				the_post();
-				get_template_part('template-parts/content', 'page');
-				// If comments are open or we have at least one comment, load up the comment template.
-				if (comments_open() || get_comments_number()) :
-					comments_template();
-				endif;
-				$i = $i + 1;
-			endwhile; // End of the loop.
-			?>
-		</div>
+    <?php
+    // Récupérer les trois dernières actualités
+    $args = array(
+        'post_type'      => 'post',
+        'posts_per_page' => 3,
+        'post_status'    => 'publish',
+        'orderby'        => 'date',
+        'order'          => 'DESC'
+    );
+
+    $actualites = new WP_Query($args);
+    ?>
+
+    <?php if ($actualites->have_posts()) : ?>
+
+        <div class="carousel-actualites">
+
+            <div class="carousel-piste">
+
+                <?php while ($actualites->have_posts()) :
+                    $actualites->the_post(); ?>
+
+                    <article class="carousel-slide">
+
+                        <!-- Image -->
+                        <div class="carousel-image">
+
+                            <?php if (has_post_thumbnail()) : ?>
+
+                                <?php the_post_thumbnail('large'); ?>
+
+                            <?php endif; ?>
+
+                        </div>
+
+                        <!-- Contenu -->
+                        <div class="carousel-contenu">
+
+                            <!-- Titre -->
+                            <h2><?php the_title(); ?></h2>
+
+                            <!-- Mini description -->
+                            <p>
+                                <?php echo esc_html(
+                                    wp_trim_words(get_the_excerpt(), 20)
+                                ); ?>
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                <?php endwhile; ?>
+
+            </div>
+
+            <!-- Pastilles de navigation -->
+<div class="carousel-navigation">
+
+    <?php for ($i = 0; $i < $actualites->post_count; $i++) : ?>
+
+        <button
+            type="button"
+            class="carousel-pastille <?php echo $i === 0 ? 'active' : ''; ?>"
+            aria-label="Actualité <?php echo $i + 1; ?>"
+            aria-current="<?php echo $i === 0 ? 'true' : 'false'; ?>">
+        </button>
+
+    <?php endfor; ?>
+
+</div>
+
+        </div>
+
+    <?php endif; ?>
+
+    <?php wp_reset_postdata(); ?>
+
+</div>
 		<h1 class="main-lisez">Lisez notre</h1>
 		<h1 class="main-infolettre text-rouge-titre ">infolettre</h1>
 		<div class="div-bg-red main-info">
