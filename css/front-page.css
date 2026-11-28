@@ -1,14 +1,11 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
-header {
-  background-color: white;
-  padding: 0%;
-  margin: 0%;
-}
-footer {
-  background-color: white;
-}
 * {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+html {
     padding: 0;
     margin: 0;
 }
@@ -16,6 +13,10 @@ footer {
     display: none;
 }
 .site-title {
+    padding: 0;
+    margin: 0;
+}
+.site-main {
     padding: 0;
     margin: 0;
 }
@@ -46,101 +47,6 @@ footer {
 /*# sourceMappingURL=main.css.map */
 /* Couleurs globales - Les variables de couleurs suivantes
 sont utilisées dans tout le site web. */
-:root {
---background-color: #D9D9D9; /* couleur du fond du site*/
---text-color-contrast: #ECE7E7; /* couleur de texte pâle*/
---text-color: #2C3336; /* couleur de texte foncé*/
---accent-color: #00C2EA; /* couleur d'accent*/
---accent-color-contrast: #003B5C; /* couleur d'accent foncé*/
---brand-color: #DA453A; /* couleur de marque*/
---brand-color-contrast: #A3170D; /* couleur de marque foncé*/
-}
-
-/* Couleurs footer - Les variables de couleurs suivantes
-sont utilisées dans le footer du site web. */
-:root {
---footer-background-color: #465156;
---footer-text-size-mobile: 1px;
---footer-text-size-tablet: 1px;
---footer-text-size-desktop: 1px;
-
---footer-height-mobile: auto;
---footer-width-mobile: auto;
---footer-height-tablet: auto;
---footer-width-tablet: auto;
---footer-height-desktop: auto;
---footer-width-desktop: auto;
-}
-
-/* Variable des fonts et du texte - Les variables suivantes sont utilisées dans le texte sur tout le site web */
-:root {
-/* famille de typographie */
-    /* --font: "Jost", sans-serif; */
-/* variables de titres */
-    --title-size-desktop: 70px;
-    --title-size-tablet: 64px;
-    --title-size-mobile: 48px;
-    --title-weight: bold;
-/* variables de sous-titres */
-    --subtitle-size-desktop:36px;
-    --subtitle-size-tablet:32px;
-    --subtitle-size-mobile:30px;
-    --subtitle-weight: bolder;
-/* variables de paragraphes */
-    --p-size-desktop:24px;
-    --p-size-tablet:20px;
-    --p-size-mobile:15px;
-/* variables de liens */
-    --links-size-desktop:28px;
-    --links-size-tablet:24px;
-    --links-size-mobile:21px;
-    --links-weight: bold;
-}
-/* Variables des boutons - Les variables suivantes sont pour les boutons */
-:root {
-    --button-text-size-desktop : 37.5px;
-    --button-text-size-tablet : 30px;
-    --button-text-size-mobile : 28px;
-    --button-weight-desktop : bold;
-    --button-weight-mobile : bolder;
-    --button-allignment : center;
-}
-/* Variables du logo - Les variables suivantes sont utilisées pour le logo du site web */
-:root {
-    --logo-height-mobile : 65px;
-    --logo-width-mobile : 267px;
-    --logo-height-tablet : 84px; /*à revoir*/
-    --logo-width-tablet : 319px; /*à revoir*/
-    --logo-height-desktop : 93px;
-    --logo-width-desktop : 353px;
-}
-
-/* Variables des boites - Les variables suivantes sont utilisées pour les boites du site web */
-:root {
-    --box-height-mobile : auto;
-    --box-width-mobile : 362px;
-    --box-height-tablet : auto;
-    --box-width-tablet-1 : 482px;
-    --box-width-tablet-2 : 733px;
-    --box-width-tablet-3 : 855px;
-    --box-width-tablet-4 : 980px;
-    --box-height-desktop : auto;
-    --box-width-desktop-1: 793px;
-    --box-width-desktop-2: 927px;
-    --box-width-desktop-3: 1054px;
-    --box-width-desktop-4: 1282px;
-}
-/* Section header*/
-
-:root {
-    --header-backkground-color: #A3170D;
-    --header-height-mobile: 77px;
-    --header-width-mobile: auto;
-    --header-height-tablette: 100px;
-    --header-width-tablette: auto;
-    --header-height-desktop: 119px;
-    --header-width-desktop: auto;
-}
 
 /* Section custom*/
     .text-rouge-titre { color: var(--brand-color); }
@@ -150,10 +56,6 @@ sont utilisées dans le footer du site web. */
 /* ***************************************
             Styles généraux
 *************************************** */ 
-body {
-    color: var(--text-color);
-    background-color: var(--background-color);
-}
 
 .blue-links {
     color: var(--accent-color);
@@ -165,10 +67,11 @@ body {
     text-decoration-thickness: 3px;
 }
 .text-button {
-    font-size: var(--button-text-size-desktop);
+    font-size: var(--button-text-size-mobile);
     font-weight: bold;
     margin: 0;
     padding: 0;
+    text-wrap: nowrap;
 }
 
 /* PAGE D'ACCUEIL */
@@ -191,23 +94,20 @@ body {
     grid-area: p3;
 }
 .container {
-    padding-top: 50px;
-    margin-left: 20px;
-    margin-right: 20px;
     display: grid;
-    columns: 12;
     gap: 20px 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    /*grid-template-rows: 9em 9em 9em 9em;*/
+    grid-template-columns: repeat(4, 1fr);
     grid-template-areas: 
-    "mainTitle mainTitle mainTitle mainTitle . . . . . . ."
-    "p1 p1 p1 p1 p1 p1 p1 p1 p1 p1 p1 p1"
-    "p2 p2 p2 p2 p2 p2 p2 p2 p2 p2 p2 p2"
-    "p3 p3 p3 . . . . . . . . ."
+    "mainTitle mainTitle mainTitle ."
+    "p1 p1 p1 p1"
+    "p2 p2 p2 p2"
+    "p3 p3 p3 p3"
     ;
-    height: 1255px;
-    background-image: url('../images/dom.png');
-    background-repeat: no-repeat;
-    background-size: auto;
-    background-position: bottom;
+
 }
 .main-link1 {
     grid-area: mainLink1;
@@ -322,61 +222,66 @@ body {
 
 }
 .container2 {
-    padding-top: 50px;
+        padding-top: 50px;
     display: grid;
-    columns: 12;
-    justify-content: space-between;
     gap: 20px 20px;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
     grid-template-areas: 
-    ". mainTitle mainTitle mainTitle . . . . . . . ."
-    ". bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage ."
-    ". actualitelinks actualitelinks actualitelinks . . . . . . . ."
-    ". mainLink1 mainLink1 mainLink1 . . . . . . . ."
-    ". mainLisez mainLisez mainLisez mainLisez . . . tinyInfolettreImage tinyInfolettreImage tinyInfolettreImage ."
-    ". mainInfolettre mainInfolettre mainInfolettre . . . . tinyInfolettreImage tinyInfolettreImage tinyInfolettreImage ."
-    ". mainInfo mainInfo mainInfo mainInfo mainLettre mainLettre mainLettre tinyInfolettreImage tinyInfolettreImage tinyInfolettreImage ."
-    ". mainLink2 mainLink2 mainLink2 . . . . . . . ."
-    ". mainInfolettreLinks mainInfolettreLinks mainInfolettreLinks . . . . . . . ."
+    "mainTitle mainTitle mainTitle mainTitle"
+    "bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage"
+    "actualitelinks actualitelinks actualitelinks ."
+    "mainLink1 mainLink1 mainLink1 ."
+    "mainLisez mainLisez mainLisez ."
+    "mainInfolettre mainInfolettre mainInfolettre ."
+    "mainInfo mainInfo mainInfo mainLettre"
+    "mainLink2 mainLink2 mainLink2 mainLink2"
+    "mainInfolettreLinks mainInfolettreLinks mainInfolettreLinks mainInfolettreLinks"
     ;
 }
 .imgC3 {
     background-image: url('../images/n_TR4_o22WBG1o.jpg');
     grid-area: imgC3;
-    height: 1600px;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 .lien-collection {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
 }
 .container3 {
     padding-top: 50px;
+    padding-top: 50px;
     display: grid;
-    margin-left: 20px;
-    margin-right: 20px;
-    columns: 12;
-    justify-content: space-between;
     gap: 20px 20px;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
     grid-template-areas: 
-    ". mainTitle mainTitle mainTitle mainTitle mainTitle . . . . . ."
-    ". imgC3 imgC3 imgC3 imgC3 imgC3 imgC3 imgC3 imgC3 imgC3 imgC3 ."
-    ". p1 p1 p1 p1 p1 . . p3 p3 p3 ."
+    "mainTitle mainTitle mainTitle mainTitle"
+    "imgC3 imgC3 imgC3 imgC3"
+    "p3 p3 p3 p3"
+    "p1 p1 p1 p1"
     ;
 }
 .container4 {
-    padding-top: 50px;
+   padding-top: 50px;
     display: grid;
-    margin-left: 20px;
-    margin-right: 20px;
-    columns: 12;
+    padding-left: 20px;
+    padding-right: 20px;
+    columns: 4;
     justify-content: space-between;
     gap: 20px 20px;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     grid-template-areas: 
-    ". mainTitle mainTitle mainTitle mainTitle . . . . . . ."
-    ". p1 p1 p1 p1 p1 . . . . . ."
-    ". p2 p2 p2 p2 . . . . . . ."
+    "mainTitle mainTitle mainTitle mainTitle"
+    "p1 p1 p1 p1"
+    "p2 p2 p2 p2"
 
     ;
 }
@@ -390,6 +295,7 @@ body {
     padding: 30px;
     background-color: var(--brand-color);
     border-radius: 20px 0px 20px 0px;
+    height: 5em;
 }
 .div-texte-front-page {
     /* background-image: url("B_vG6wHs-8N2ok.jpg"); */
@@ -408,42 +314,88 @@ h2 {
     font-weight: var(--subtitle-weight);
     /* padding: var(--subti); existe pas*/
 }
-p{
-    font-size: var(--p-size-mobile);
-}
 a {
     font-size: var(--links-size-mobile);
     font-weight: var(--links-weight);
 }
-    /* header {}*/
-    footer {
-        background-color: var(--footer-background-color);
-        color: var(--text-color-pale);
-        width: var(--footer-width-mobile);
-        height: var(--footer-height-mobile);
+@media (min-width: 768px) {
+    .imgC3 {
+    background-image: url('../images/n_TR4_o22WBG1o.jpg');
+    grid-area: imgC3;
+    height: 800px;
     }
-@media (min-device-width: 768px) {
-    /* header {}*/
-    footer {
-        background-color: var(--footer-background-color);
-        color: var(--text-color-pale);
-        width: var(--footer-width-tablet);
-        height: var(--footer-height-tablet);
+    .text-button{
+        font-size: var(--button-text-size-tablet);
     }
-    h1 {
-        font-size: var(--title-size-tablet);
+    .container {
+        padding-top: 50px;
+        padding-left: 20px;
+        padding-right: 20px;
+        display: grid;
+        grid-template-rows: 8em 10em 8em 8em;
+        gap: 20px 20px;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-areas: 
+        "mainTitle mainTitle mainTitle mainTitle mainTitle mainTitle mainTitle mainTitle"
+        "p1 p1 p1 p1 p1 p1 p1 p1"
+        "p2 p2 p2 p2 p2 p2 p2 p2"
+        "p3 p3 p3 p3 . . . ."
+        ;
+        height: 70em;
+        background-image: url('../images/dom.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: bottom;
     }
-    h2 {
-        font-size: var(--subtitle-size-tablet);
+    .container2 {
+        padding-top: 50px;
+        display: grid;
+        justify-content: space-between;
+        gap: 20px 20px;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-areas: 
+        "mainTitle mainTitle mainTitle mainTitle . . . ."
+        "bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage"
+        "actualitelinks actualitelinks actualitelinks . . . . ."
+        "mainLink1 mainLink1 mainLink1 . . . . ."
+        "mainLisez mainLisez mainLisez . . tinyInfolettreImage tinyInfolettreImage tinyInfolettreImage"
+        "mainInfolettre mainInfolettre mainInfolettre. . tinyInfolettreImage tinyInfolettreImage tinyInfolettreImage"
+        "mainInfo mainInfo mainInfo mainLettre mainLettre tinyInfolettreImage tinyInfolettreImage tinyInfolettreImage"
+        "mainLink2 mainLink2 mainLink2 . . . . ."
+        "mainInfolettreLinks mainInfolettreLinks mainInfolettreLinks . . . . ."
+        ;
     }
-    p{
-        font-size: var(--p-size-tablet);
+    .container3 {
+        padding-top: 50px;
+        display: grid;
+        padding-left: 20px;
+        padding-right: 20px;
+        justify-content: space-between;
+        gap: 20px 20px;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-areas: 
+        "mainTitle mainTitle mainTitle mainTitle mainTitle mainTitle . ."
+        "imgC3 imgC3 imgC3 imgC3 imgC3 imgC3 imgC3 imgC3"
+        "p1 p1 p1 p1 . p3 p3 p3"
+        ;
     }
-    a {
-        font-size: var(--links-size-tablet);
+    .container4 {
+        padding-top: 50px;
+        display: grid;
+        padding-left: 20px;
+        padding-right: 20px;
+        justify-content: space-between;
+        gap: 20px 20px;
+        grid-template-columns: repeat(8, minmax(0, 1fr));
+        grid-template-areas: 
+        "mainTitle mainTitle mainTitle mainTitle mainTitle mainTitle mainTitle mainTitle"
+        "p1 p1 p1 p1 p1 p1 p1 ."
+        "p2 p2 p2 p2 . . . ."
+    
+        ;
     }
 }
-@media (min-device-width: 1024px) {
+@media (min-width: 1024px) {
     /* header{}*/
         .carousel-image {
         height: 500px;
@@ -456,22 +408,84 @@ a {
     .carousel-contenu p {
         font-size: var(--p-size-desktop);
     }
-    .footer {
-        background-color: var(--footer-background-color);
-        color: var(--text-color-pale);
-        width: var(--footer-width-desktop);
-        height: var(--footer-height-desktop);
+    .lien-collection {
+    flex-direction: row-reverse;
     }
-    h1 {
-        font-size: var(--title-size-desktop);
+    .imgC3 {
+    background-image: url('../images/n_TR4_o22WBG1o.jpg');
+    grid-area: imgC3;
+    height: 1600px;
     }
-    h2 {
-        font-size: var(--subtitle-size-desktop);
+    .text-button{
+        font-size: var(--button-text-size-desktop);
     }
-    p{
-        font-size: var(--p-size-desktop);
+    .container {
+        padding-top: 50px;
+        padding-left: 20px;
+        padding-right: 20px;
+        display: grid;
+        grid-template-rows: 12em 12em 12em 12em;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-areas: 
+        "mainTitle mainTitle mainTitle mainTitle mainTitle mainTitle mainTitle mainTitle . . . ."
+        "p1 p1 p1 p1 p1 p1 p1 p1 p1 p1 p1 p1"
+        "p2 p2 p2 p2 p2 p2 p2 p2 p2 p2 p2 p2"
+        "p3 p3 p3 p3 p3 . . . . . . ."
+        ;
+        height: 90em;
+        background-image: url('../images/dom.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: bottom;
     }
-    a {
-        font-size: var(--links-size-desktop);
+    .container2 {
+    padding-top: 50px;
+        display: grid;
+        columns: 12;
+        justify-content: space-between;
+        gap: 20px 20px;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        grid-template-areas: 
+        ". mainTitle mainTitle mainTitle . . . . . . . ."
+        ". bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage ."
+        ". actualitelinks actualitelinks actualitelinks . . . . . . . ."
+        ". mainLink1 mainLink1 mainLink1 . . . . . . . ."
+        ". mainLisez mainLisez mainLisez mainLisez . . . tinyInfolettreImage tinyInfolettreImage tinyInfolettreImage ."
+        ". mainInfolettre mainInfolettre mainInfolettre . . . . tinyInfolettreImage tinyInfolettreImage tinyInfolettreImage ."
+        ". mainInfo mainInfo mainInfo mainInfo mainLettre mainLettre mainLettre tinyInfolettreImage tinyInfolettreImage tinyInfolettreImage ."
+        ". mainLink2 mainLink2 mainLink2 . . . . . . . ."
+        ". mainInfolettreLinks mainInfolettreLinks mainInfolettreLinks . . . . . . . ."
+        ;
     }
-}
+    .container3 {
+        padding-top: 50px;
+        display: grid;
+        padding-left: 20px;
+        padding-right: 20px;
+        columns: 12;
+        justify-content: space-between;
+        gap: 20px 20px;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        grid-template-areas: 
+        ". mainTitle mainTitle mainTitle mainTitle mainTitle . . . . . ."
+        ". imgC3 imgC3 imgC3 imgC3 imgC3 imgC3 imgC3 imgC3 imgC3 imgC3 ."
+        ". p1 p1 p1 p1 p1 . p3 p3 p3 p3 ."
+        ;
+    }
+    .container4 {
+        padding-top: 50px;
+        display: grid;
+        padding-left: 20px;
+        padding-right: 20px;
+        columns: 12;
+        justify-content: space-between;
+        gap: 20px 20px;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        grid-template-areas: 
+        ". mainTitle mainTitle mainTitle mainTitle mainTitle mainTitle mainTitle . . . ."
+        ". p1 p1 p1 p1 p1 . . . . . ."
+        ". p2 p2 p2 p2 . . . . . . ."
+    
+        ;
+    }
+    }

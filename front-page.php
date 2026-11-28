@@ -17,7 +17,6 @@ get_header();
 ?>
 <main id="primary" class="site-main">
 	<div class="container">
-		<div>
 			<h1 class="main-title"><span class="text-rouge-titre">Qui</span><span> sommes-nous?</span></h1>
 			<p class="main-p1">
 				Le syndicat des professeures et professeurs du Collège de Maisonneuve (SPPCM) a pour objectifs l’étude,
@@ -29,7 +28,6 @@ get_header();
 				elle-même membre (ou filiale) de la Confédération des syndicats nationaux (CSN).
 			</p>
 			<p class="main-p3 common-links"><span>Notre</span><span class="blue-links"> structure </span><span>en détails-></span></p>
-		</div>
 	</div>
 	<div id="fond-contrast" class="container2">
 		<h1 class="main-title">Actualité</h1>
@@ -128,7 +126,7 @@ get_header();
 	</div>
 	<div id="" class="container3">
 		<h1 class="main-title"><span>À</span><span class="text-rouge-titre"> votre</span><span> service</span></h1>
-		<div class="imgC3"><img src="../images/n_TR4_o22WBG1o.jpg" alt=""></div>
+		<div class="imgC3"><img></div>
 		<p class="main-p1">La convention collective définit les détails de l’entente entre vous et votre employeur.</p>
 		<p class="main-p3 common-links lien-collection "><span><span>Consulter la</span><span class="blue-links"> convention-></span></span></p>
 
