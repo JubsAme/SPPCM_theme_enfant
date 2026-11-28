@@ -65,3 +65,7 @@
 			</nav><!-- #site-navigation -->
 		</div>
 	</header><!-- #masthead -->
+	    <div class="header-decoration" aria-hidden="true">
+        <div class="triangle-sombre"></div>
+        <div class="triangle-rouge"></div>
+    </div>

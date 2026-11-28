@@ -71,6 +71,13 @@ function underscores_child_scripts()
         array(),                // Dépendances de modules (autres modules requis avant celui-ci, si besoin).
         '1.0.0'
     );
+    wp_enqueue_script(
+    'underscores-child-header-js',
+    get_stylesheet_directory_uri() . '/js/header.js',
+    array(),
+    '1.0.0',
+    true
+    );
 }
 add_action('wp_enqueue_scripts', 'underscores_child_scripts');
 

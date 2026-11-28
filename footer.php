@@ -1,6 +1,7 @@
 <?php
 get_sidebar();
 get_footer();
+wp_footer();
 ?>
 </body>
 </html>

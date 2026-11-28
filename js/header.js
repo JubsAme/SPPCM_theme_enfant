@@ -6,8 +6,9 @@
  * - Accordéon : un seul sous-menu ouvert à la fois.
  * - Échap ferme tout ; repasser en mode ordinateur referme le panneau.
  */
-export class Header {
+class Header {
     constructor(el) {
+        console.log("Composant Header initialisé");
         this.el = el;
         this.toggle = el.querySelector('.menu-toggle');
         this.panel = el.querySelector('.site-menu-panel');
@@ -99,3 +100,14 @@ export class Header {
         this.parents.forEach((li) => this.setSubmenu(li, false));
     }
 }
+
+// Initialisation du menu principal responsive
+document.addEventListener('DOMContentLoaded', function () {
+
+    const elHeader = document.querySelector('[data-js-component="Header"]');
+
+    if (elHeader) {
+        new Header(elHeader);
+    }
+
+});
