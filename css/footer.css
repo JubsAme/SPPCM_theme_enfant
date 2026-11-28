@@ -1,3 +1,17 @@
+footer a {
+    font-size: var(--links-size-mobile);
+    font-weight: var(--links-weight);
+    color: var(--accent-color);
+}
+
+footer a:hover {
+    color: var(--accent-color-contrast);
+}
+
+footer a:visited {
+    color: var(--links-color-visited);
+}
+
 footer {
     background-color: var(--footer-background-color);
     color: var(--text-color-contrast);
@@ -35,7 +49,7 @@ footer {
     padding : var(--footer-padding-mobile);
     display: grid;
     grid-template-columns: 100px 20px 100px 20px 100px 20px 100px;
-    grid-template-rows: 20px 70px 20px 210px 20px 320px 20px 100px 20px 120px 20px 32px 20px;
+    grid-template-rows: 20px 210px 20px 210px 20px 320px 20px 100px 20px 120px 20px 32px 20px;
 }
 
 footer h1 {
@@ -177,17 +191,17 @@ footer h1 {
 }
 
 @media (min-width: 768px) {
-    a {
+    footer a {
         font-size: var(--links-size-tablet);
         font-weight: var(--links-weight);
         color: var(--accent-color);
     }
 
-    a:hover {
+    footer a:hover {
         color: var(--accent-color-contrast);
     }
 
-    a:visited {
+    footer a:visited {
         color: var(--links-color-visited);
     }
 
@@ -396,17 +410,17 @@ footer h1 {
 }
 
 @media (min-width: 1024px) {
-    a {
+    footer a {
         font-size: var(--links-size-desktop);
         font-weight: var(--links-weight);
         color: var(--accent-color);
     }
 
-    a:hover {
+    footer a:hover {
         color: var(--accent-color-contrast);
     }
 
-    a:visited {
+    footer a:visited {
         color: var(--links-color-visited);
     }
 
@@ -620,17 +634,17 @@ footer h1 {
 }
 
 @media (min-width: 1440px) {
-    a {
+    footer a {
         font-size: var(--links-size-desktop);
         font-weight: var(--links-weight);
         color: var(--accent-color);
     }
 
-    a:hover {
+    footer a:hover {
         color: var(--accent-color-contrast);
     }
 
-    a:visited {
+    footer a:visited {
         color: var(--links-color-visited);
     }
 

@@ -60,7 +60,7 @@ sont utilisées dans le footer du site web. */
 --footer-text-size-mobile: 15px;
 --footer-text-size-tablet: 20px;
 --footer-text-size-desktop: 24px;
---footer-title-padding-mobile: 20px 20px 0 0;
+--footer-title-padding-mobile: 0 0 0 0;
 --footer-title-padding-tablet: 0 0 0 0;
 --footer-title-padding-desktop: 0 0 0 0;
 
