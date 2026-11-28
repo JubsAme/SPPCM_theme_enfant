@@ -8,8 +8,13 @@
  * mapping HTML → classe JS.
  */
 import { Test } from './Test.js';
+import { Header } from './header.js';
 
 new Test();
+
+// Menu principal responsive (hamburger + sous-menus)
+const elHeader = document.querySelector('[data-js-component="Header"]');
+if (elHeader) new Header(elHeader);
 
 
 /**
