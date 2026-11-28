@@ -34,28 +34,18 @@ function underscores_child_assets()
         array('underscores-child-main'),
         filemtime(get_stylesheet_directory() . '/css/header.css')
     );
+}
+// CSS de la page front-page
+if (('front-page')) {
 
-    // CSS de la page Convention collective
-    if (is_page('convention-collective')) {
-
-        wp_enqueue_style(
-            'underscores-child-convention',
-            get_stylesheet_directory_uri() . '/css/convention-collective.css',
-            array('underscores-child-main'),
-            filemtime(get_stylesheet_directory() . '/css/convention-collective.css')
-        );
-    }
-
-    // CSS de la page d'accueil
-    if (is_front_page()) {
-
-        wp_enqueue_style(
-            'underscores-child-front-page',
-            get_stylesheet_directory_uri() . '/css/front-page.css',
-            array('underscores-child-main'),
-            filemtime(get_stylesheet_directory() . '/css/front-page.css')
-        );
-    }
+    wp_enqueue_style(
+        'underscores-child-front-page',
+        get_stylesheet_directory_uri() . '/css/front-page.css',
+        array('underscores-child-main'),
+        filemtime(
+            get_stylesheet_directory() . '/css/front-page.css'
+        )
+    );
 }
 add_action('wp_enqueue_scripts', 'underscores_child_assets');
 
@@ -72,6 +62,12 @@ function underscores_child_scripts()
     wp_enqueue_script_module(
         'underscores-child-main',
         get_stylesheet_directory_uri() . '/js/main.js',
+        array(),                // Dépendances de modules (autres modules requis avant celui-ci, si besoin).
+        '1.0.0'
+    );
+        wp_enqueue_script(
+        'underscores-child-carousel',
+        get_stylesheet_directory_uri() . '/js/carousel.js',
         array(),                // Dépendances de modules (autres modules requis avant celui-ci, si besoin).
         '1.0.0'
     );

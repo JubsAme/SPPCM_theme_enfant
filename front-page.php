@@ -17,7 +17,6 @@ get_header();
 ?>
 <main id="primary" class="site-main">
 	<div class="container">
-		<div>
 			<h1 class="main-title"><span class="text-rouge-titre">Qui</span><span> sommes-nous?</span></h1>
 			<p class="main-p1">
 				Le syndicat des professeures et professeurs du Collège de Maisonneuve (SPPCM) a pour objectifs l’étude,
@@ -29,26 +28,91 @@ get_header();
 				elle-même membre (ou filiale) de la Confédération des syndicats nationaux (CSN).
 			</p>
 			<p class="main-p3 common-links"><span>Notre</span><span class="blue-links"> structure </span><span>en détails-></span></p>
-		</div>
 	</div>
 	<div id="fond-contrast" class="container2">
 		<h1 class="main-title">Actualité</h1>
 		<p class="main-actualitelinks common-links"><span>Toutes les</span><span class="blue-links"> actualités-></span></p>
-		<div class="main-bigActualiteImage">
+		<div class="main-bigActualiteImage text-dark">
 
-			<?php
-			$i = 0;
-			while (have_posts() && $i < 3) :
-				the_post();
-				get_template_part('template-parts/content', 'page');
-				// If comments are open or we have at least one comment, load up the comment template.
-				if (comments_open() || get_comments_number()) :
-					comments_template();
-				endif;
-				$i = $i + 1;
-			endwhile; // End of the loop.
-			?>
-		</div>
+    <?php
+    // Récupérer les trois dernières actualités
+    $args = array(
+        'post_type'      => 'post',
+        'posts_per_page' => 3,
+        'post_status'    => 'publish',
+        'orderby'        => 'date',
+        'order'          => 'DESC'
+    );
+
+    $actualites = new WP_Query($args);
+    ?>
+
+    <?php if ($actualites->have_posts()) : ?>
+
+        <div class="carousel-actualites">
+
+            <div class="carousel-piste">
+
+                <?php while ($actualites->have_posts()) :
+                    $actualites->the_post(); ?>
+
+                    <article class="carousel-slide">
+
+                        <!-- Image -->
+                        <div class="carousel-image">
+
+                            <?php if (has_post_thumbnail()) : ?>
+
+                                <?php the_post_thumbnail('large'); ?>
+
+                            <?php endif; ?>
+
+                        </div>
+
+                        <!-- Contenu -->
+                        <div class="carousel-contenu">
+
+                            <!-- Titre -->
+                            <h2><?php the_title(); ?></h2>
+
+                            <!-- Mini description -->
+                            <p>
+                                <?php echo esc_html(
+                                    wp_trim_words(get_the_excerpt(), 20)
+                                ); ?>
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                <?php endwhile; ?>
+
+            </div>
+
+            <!-- Pastilles de navigation -->
+<div class="carousel-navigation">
+
+    <?php for ($i = 0; $i < $actualites->post_count; $i++) : ?>
+
+        <button
+            type="button"
+            class="carousel-pastille <?php echo $i === 0 ? 'active' : ''; ?>"
+            aria-label="Actualité <?php echo $i + 1; ?>"
+            aria-current="<?php echo $i === 0 ? 'true' : 'false'; ?>">
+        </button>
+
+    <?php endfor; ?>
+
+</div>
+
+        </div>
+
+    <?php endif; ?>
+
+    <?php wp_reset_postdata(); ?>
+
+</div>
 		<h1 class="main-lisez">Lisez notre</h1>
 		<h1 class="main-infolettre text-rouge-titre ">infolettre</h1>
 		<div class="div-bg-red main-info">
@@ -62,7 +126,7 @@ get_header();
 	</div>
 	<div id="" class="container3">
 		<h1 class="main-title"><span>À</span><span class="text-rouge-titre"> votre</span><span> service</span></h1>
-		<div class="imgC3"><img src="../images/n_TR4_o22WBG1o.jpg" alt=""></div>
+		<div class="imgC3"><img></div>
 		<p class="main-p1">La convention collective définit les détails de l’entente entre vous et votre employeur.</p>
 		<p class="main-p3 common-links lien-collection "><span><span>Consulter la</span><span class="blue-links"> convention-></span></span></p>
 
