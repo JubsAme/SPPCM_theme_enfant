@@ -17,19 +17,17 @@ get_header();
 ?>
 <main id="primary" class="site-main">
 	<div class="container">
-		<div>
-			<h1 class="main-title"><span class="text-rouge-titre">Qui</span><span> sommes-nous?</span></h1>
-			<p class="main-p1">
-				Le syndicat des professeures et professeurs du Collège de Maisonneuve (SPPCM) a pour objectifs l’étude,
-				la défense et la promotion des intérêts et des objectifs professionnels, syndicaux, économiques et sociaux de ses membres.
-				Il vise également la promotion de la recherche et de la qualité du travail en éducation.
-			</p>
-			<p class="main-p2">
-				Le SPPCM regroupe plus de 630 membres. Fondé le 7 mars 1968, il est affilié à la fédération nationale des enseignantes et enseignants du Québec (FNEEQ),
-				elle-même membre (ou filiale) de la Confédération des syndicats nationaux (CSN).
-			</p>
-			<p class="main-p3 common-links"><span>Notre</span><span class="blue-links"> structure </span><span>en détails-></span></p>
-		</div>
+		<h1 class="main-title"><span class="text-rouge-titre">Qui</span><span> sommes-nous?</span></h1>
+		<p class="main-p1">
+			Le syndicat des professeures et professeurs du Collège de Maisonneuve (SPPCM) a pour objectifs l’étude,
+			la défense et la promotion des intérêts et des objectifs professionnels, syndicaux, économiques et sociaux de ses membres.
+			Il vise également la promotion de la recherche et de la qualité du travail en éducation.
+		</p>
+		<p class="main-p2">
+			Le SPPCM regroupe plus de 630 membres. Fondé le 7 mars 1968, il est affilié à la fédération nationale des enseignantes et enseignants du Québec (FNEEQ),
+			elle-même membre (ou filiale) de la Confédération des syndicats nationaux (CSN).
+		</p>
+		<p class="main-p3 common-links"><span>Notre</span><span class="blue-links"> structure </span><span>en détails-></span></p>
 	</div>
 	<div id="fond-contrast" class="container2">
 		<h1 class="main-title">Actualité</h1>

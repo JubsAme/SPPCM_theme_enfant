@@ -16,6 +16,10 @@ html {
     padding: 0;
     margin: 0;
 }
+.site {
+    padding: 0;
+    margin: 0;
+}
 .site-main {
     padding: 0;
     margin: 0;
@@ -95,14 +99,19 @@ sont utilisées dans tout le site web. */
 }
 .container {
     display: grid;
+    gap: 20px 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    grid-template-rows: 8em 8em 8em 8em;
     grid-template-columns: repeat(4, 1fr);
     grid-template-areas: 
-    ". mainTitle mainTitle mainTitle"
+    "mainTitle mainTitle mainTitle ."
     "p1 p1 p1 p1"
     "p2 p2 p2 p2"
-    "p3 p3 p3 ."
+    "p3 p3 p3 p3"
     ;
-    gap: 20px;
+
 }
 .main-link1 {
     grid-area: mainLink1;
@@ -161,11 +170,11 @@ sont utilisées dans tout le site web. */
 .container2 {
     padding-top: 50px;
     display: grid;
-    justify-content: space-between;
     gap: 20px 20px;
     padding-left: 20px;
     padding-right: 20px;
-    columns: 4;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
     grid-template-areas: 
     "mainTitle mainTitle mainTitle mainTitle"
     "bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage"
@@ -185,36 +194,37 @@ sont utilisées dans tout le site web. */
 }
 .lien-collection {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
 }
 .container3 {
     padding-top: 50px;
+    padding-top: 50px;
     display: grid;
-    margin-left: 20px;
-    margin-right: 20px;
-    columns: 12;
-    justify-content: space-between;
     gap: 20px 20px;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
     grid-template-areas: 
-    ". mainTitle mainTitle mainTitle mainTitle mainTitle . . . . . ."
-    ". imgC3 imgC3 imgC3 imgC3 imgC3 imgC3 imgC3 imgC3 imgC3 imgC3 ."
-    ". p1 p1 p1 p1 p1 . . p3 p3 p3 ."
+    "mainTitle mainTitle mainTitle mainTitle"
+    "imgC3 imgC3 imgC3 imgC3"
+    "p3 p3 p3 p3"
+    "p1 p1 p1 p1"
     ;
 }
 .container4 {
     padding-top: 50px;
     display: grid;
-    margin-left: 20px;
-    margin-right: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
     columns: 4;
     justify-content: space-between;
     gap: 20px 20px;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     grid-template-areas: 
-    ". mainTitle mainTitle mainTitle mainTitle . . . . . . ."
-    ". p1 p1 p1 p1 p1 . . . . . ."
-    ". p2 p2 p2 p2 . . . . . . ."
+    "mainTitle mainTitle mainTitle mainTitle"
+    "p1 p1 p1 p1"
+    "p2 p2 p2 p2"
 
     ;
 }
@@ -253,18 +263,19 @@ a {
 @media (min-width: 768px) {
     .container {
         padding-top: 50px;
-        margin-left: 20px;
-        margin-right: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
         display: grid;
-        columns: 12;
+        grid-template-rows: 8em 10em 8em 8em;
         gap: 20px 20px;
+        grid-template-columns: repeat(8, 1fr);
         grid-template-areas: 
-        "mainTitle mainTitle mainTitle mainTitle . . . . . . ."
-        "p1 p1 p1 p1 p1 p1 p1 p1 p1 p1 p1 p1"
-        "p2 p2 p2 p2 p2 p2 p2 p2 p2 p2 p2 p2"
-        "p3 p3 p3 . . . . . . . . ."
+        "mainTitle mainTitle mainTitle mainTitle mainTitle mainTitle mainTitle mainTitle"
+        "p1 p1 p1 p1 p1 p1 p1 p1"
+        "p2 p2 p2 p2 p2 p2 p2 p2"
+        "p3 p3 p3 p3 . . . ."
         ;
-        height: 1455px;
+        height: 60em;
         background-image: url('../images/dom.png');
         background-repeat: no-repeat;
         background-size: contain;
@@ -276,66 +287,71 @@ a {
         columns: 12;
         justify-content: space-between;
         gap: 20px 20px;
-        grid-template-columns: repeat(12, minmax(0, 1fr));
+        grid-template-columns: repeat(8, 1fr);
         grid-template-areas: 
-        ". mainTitle mainTitle mainTitle . . . . . . . ."
-        ". bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage ."
-        ". actualitelinks actualitelinks actualitelinks . . . . . . . ."
-        ". mainLink1 mainLink1 mainLink1 . . . . . . . ."
-        ". mainLisez mainLisez mainLisez mainLisez . . . tinyInfolettreImage tinyInfolettreImage tinyInfolettreImage ."
-        ". mainInfolettre mainInfolettre mainInfolettre . . . . tinyInfolettreImage tinyInfolettreImage tinyInfolettreImage ."
-        ". mainInfo mainInfo mainInfo mainInfo mainLettre mainLettre mainLettre tinyInfolettreImage tinyInfolettreImage tinyInfolettreImage ."
-        ". mainLink2 mainLink2 mainLink2 . . . . . . . ."
-        ". mainInfolettreLinks mainInfolettreLinks mainInfolettreLinks . . . . . . . ."
+        "mainTitle mainTitle mainTitle mainTitle . . . ."
+        "bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage bigActualiteImage"
+        "actualitelinks actualitelinks actualitelinks . . . . ."
+        "mainLink1 mainLink1 mainLink1 . . . . ."
+        "mainLisez mainLisez mainLisez . . tinyInfolettreImage tinyInfolettreImage tinyInfolettreImage"
+        "mainInfolettre mainInfolettre mainInfolettre. . tinyInfolettreImage tinyInfolettreImage tinyInfolettreImage"
+        "mainInfo mainInfo mainInfo mainLettre mainLettre tinyInfolettreImage tinyInfolettreImage tinyInfolettreImage"
+        "mainLink2 mainLink2 mainLink2 . . . . ."
+        "mainInfolettreLinks mainInfolettreLinks mainInfolettreLinks . . . . ."
         ;
     }
     .container3 {
         padding-top: 50px;
         display: grid;
-        margin-left: 20px;
-        margin-right: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
         columns: 12;
         justify-content: space-between;
         gap: 20px 20px;
-        grid-template-columns: repeat(12, minmax(0, 1fr));
+        grid-template-columns: repeat(8, 1fr);
         grid-template-areas: 
-        ". mainTitle mainTitle mainTitle mainTitle mainTitle . . . . . ."
-        ". imgC3 imgC3 imgC3 imgC3 imgC3 imgC3 imgC3 imgC3 imgC3 imgC3 ."
-        ". p1 p1 p1 p1 p1 . . p3 p3 p3 ."
+        "mainTitle mainTitle mainTitle mainTitle . . . ."
+        "imgC3 imgC3 imgC3 imgC3 imgC3 imgC3 imgC3 imgC3"
+        "p1 p1 p1 p1 . p3 p3 p3"
         ;
     }
     .container4 {
         padding-top: 50px;
         display: grid;
-        margin-left: 20px;
-        margin-right: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
         columns: 12;
         justify-content: space-between;
         gap: 20px 20px;
         grid-template-columns: repeat(12, minmax(0, 1fr));
         grid-template-areas: 
-        ". mainTitle mainTitle mainTitle mainTitle . . . . . . ."
-        ". p1 p1 p1 p1 p1 . . . . . ."
-        ". p2 p2 p2 p2 . . . . . . ."
+        "mainTitle mainTitle mainTitle mainTitle . . . ."
+        "p1 p1 p1 p1 p1 p1 p1 ."
+        "p2 p2 p2 p2 . . . ."
     
         ;
     }
 }
 @media (min-device-width: 1024px) {
+    .lien-collection {
+        display: flex;
+        flex-direction: row-reverse;
+    }
     .container {
         padding-top: 50px;
-        margin-left: 20px;
-        margin-right: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
         display: grid;
         columns: 12;
-        gap: 20px 20px;
+        grid-template-rows: 9em 9em 9em 9em;
+        grid-template-columns: repeat(12, 1fr);
         grid-template-areas: 
-        "mainTitle mainTitle mainTitle mainTitle . . . . . . ."
+        "mainTitle mainTitle mainTitle mainTitle mainTitle mainTitle . . . . ."
         "p1 p1 p1 p1 p1 p1 p1 p1 p1 p1 p1 p1"
         "p2 p2 p2 p2 p2 p2 p2 p2 p2 p2 p2 p2"
         "p3 p3 p3 . . . . . . . . ."
         ;
-        height: 1455px;
+        height: 100em;
         background-image: url('../images/dom.png');
         background-repeat: no-repeat;
         background-size: contain;
@@ -363,8 +379,8 @@ a {
     .container3 {
         padding-top: 50px;
         display: grid;
-        margin-left: 20px;
-        margin-right: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
         columns: 12;
         justify-content: space-between;
         gap: 20px 20px;
@@ -378,8 +394,8 @@ a {
     .container4 {
         padding-top: 50px;
         display: grid;
-        margin-left: 20px;
-        margin-right: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
         columns: 12;
         justify-content: space-between;
         gap: 20px 20px;
